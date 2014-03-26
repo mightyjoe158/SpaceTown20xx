@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\WallMaker.cs" />
      <Compile Include="Assets\Scripts\bulletScript.cs" />
      <Compile Include="Assets\Scripts\bulletText.cs" />
+     <Compile Include="Assets\Scripts\deathScript.cs" />
      <Compile Include="Assets\Scripts\enemyScript.cs" />
      <Compile Include="Assets\Scripts\healthDisplayScript.cs" />
      <Compile Include="Assets\Scripts\hudWeapon.cs" />

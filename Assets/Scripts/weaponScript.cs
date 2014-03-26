@@ -28,6 +28,11 @@ public class weaponScript : MonoBehaviour {
 	public GameObject pellet;
 	public GameObject dynamite;
 	
+	//weapon noises
+	public AudioClip revolverFire;
+	public AudioClip revolverClick;
+	public AudioClip revolverReload;
+	
 	//types of second weapon
 	public enum specialMode {SHOTGUN, RIFLE, MELEE, NONE}
 	
@@ -59,6 +64,7 @@ public class weaponScript : MonoBehaviour {
 				bullet.GetComponent<bulletScript>().deviation = 100;
 				GameObject clone = (GameObject) Instantiate(bullet, transform.position, transform.rotation);
 				Physics.IgnoreCollision(clone.collider, transform.collider);
+				AudioSource.PlayClipAtPoint(revolverFire, Camera.main.transform.position);
 				
 				revolverAmmo--;
 				gunPrime = false;
@@ -92,6 +98,8 @@ public class weaponScript : MonoBehaviour {
 						break;
 				}
 
+			} else {
+				AudioSource.PlayClipAtPoint(revolverClick, Camera.main.transform.position);
 			}
 			
 		}
@@ -99,12 +107,10 @@ public class weaponScript : MonoBehaviour {
 		//'r' to reload type of weapon, one bullet at a time
 		if (Input.GetKeyDown(KeyCode.R)) {
 			if(revolverMode && revolverAmmo < 6) {
+				AudioSource.PlayClipAtPoint(revolverReload, Camera.main.transform.position);
 				revolverAmmo++;
 				gunPrime = false;
-			} else if(!revolverMode){
-				specialAmmo++;
-				gunPrime = false;
-			}
+			} 
 		}
 		if (Input.GetKeyDown(KeyCode.F)) {
 			if(dynamiteAmmo > 0) {			
