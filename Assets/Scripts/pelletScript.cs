@@ -49,6 +49,7 @@ public class pelletScript : MonoBehaviour {
 				
 				//enemy destroy
 			case("enemy"):
+				weaponScript.score += 10; 
 				Destroy(collision.gameObject, .2f);
 				break;
 			default:

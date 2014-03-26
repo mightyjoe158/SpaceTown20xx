@@ -41,6 +41,7 @@ public class bulletScript : MonoBehaviour {
 			//enemy destroy
 			case("enemy"):
 				Destroy(collision.gameObject, .2f);
+				weaponScript.score +=10; 
 				break;
 			default:
 				//fall after hitting an object

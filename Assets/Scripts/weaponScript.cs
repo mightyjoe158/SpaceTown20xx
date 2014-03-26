@@ -7,6 +7,7 @@ public class weaponScript : MonoBehaviour {
 	public int revolverAmmo;
 	public static int specialAmmo;
 	public static int dynamiteAmmo; 
+	public static int score; 
 	
 	//weapon counter is used for reloading and priming
 	public float weaponCounter;
@@ -36,8 +37,8 @@ public class weaponScript : MonoBehaviour {
 		if(FloorMaker.level == 1) {
 			hp = 100;
 			specialAmmo = 10;
+			dynamiteAmmo = 2;
 		}
-		dynamiteAmmo = 2;
 		revolverAmmo = 6; 
 		revolverMode = true;
 		gunPrime = true;
@@ -49,19 +50,19 @@ public class weaponScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( hp <= 0 ){
-			int[,] mapNull = new int[1000, 1000];
-			Destroy(gameObject); 
-			FloorMaker.currentFloorMakers = 0; 
-			FloorMaker.entrancePlaced = false; 
-			FloorMaker.startWall = false; 
-			FloorMaker.endedFloorMakers = 0;
-			FloorMaker.map = mapNull;  
-			FloorMaker.level = 1; 
-			FloorMaker.maxEnemy = 20; 
-			FloorMaker.enemyProbability = 50; 
-			Application.LoadLevel(Application.loadedLevel);
-		}
+//		if( hp <= 0 ){
+//			int[,] mapNull = new int[1000, 1000];
+//			Destroy(gameObject); 
+//			FloorMaker.currentFloorMakers = 0; 
+//			FloorMaker.entrancePlaced = false; 
+//			FloorMaker.startWall = false; 
+//			FloorMaker.endedFloorMakers = 0;
+//			FloorMaker.map = mapNull;  
+//			FloorMaker.level = 1; 
+//			FloorMaker.maxEnemy = 20; 
+//			FloorMaker.enemyProbability = 50; 
+//			Application.LoadLevel(Application.loadedLevel);
+//		}
 		initialCamera = transform.position;
 		initialCamera.y +=12f;
 		finalCamera = initialCamera;
@@ -124,7 +125,7 @@ public class weaponScript : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.F)) {
 			if(dynamiteAmmo > 0) {			
 				Instantiate(dynamite, transform.position + dynamiteDistance, transform.rotation);	
-					
+				dynamiteAmmo--; 					
 			}	
 		}
 		//switch active weapon

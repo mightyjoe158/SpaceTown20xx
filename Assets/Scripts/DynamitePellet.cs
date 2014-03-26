@@ -42,13 +42,13 @@ public class DynamitePellet : MonoBehaviour {
 				
 				//player damaga
 			case("bullet"): 
-				Physics.IgnoreCollision(collision.gameObject.collider, this.gameObject.collider);
 				break; 
 			case("avatar"):
 				break;
 				
 				//enemy destroy
 			case("enemy"):
+				weaponScript.score +=10; 
 				Destroy(collision.gameObject, .2f);
 				break;
 			default:

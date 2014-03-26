@@ -14,6 +14,6 @@ public class healthDisplayScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		mesh.text = "HP: " + avatar.GetComponent<weaponScript>().hp;
+		mesh.text = "HP: " + weaponScript.hp;
 	}
 }

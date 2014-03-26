@@ -14,8 +14,8 @@ public class FloorMaker : MonoBehaviour {
 	public Transform exitPreFab;
 	public Transform playerPreFab; 
 	public Transform invisibleWallPreFab;
-	public Transform shoutgunPreFab; 
-	public Transform rifleWallPreFab;
+	public Transform shotgunPreFab; 
+	public Transform riflePreFab;
 	
 	//maxs and mins 
 	int currentFloor = 0; 
@@ -133,9 +133,16 @@ public class FloorMaker : MonoBehaviour {
 				if(randomDrop == 0) {
 			 		Instantiate (healthPreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
 			 	}
-			 	else{
+				else if(randomDrop == 1){
 					Instantiate (ammoPreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
 			 	}
+				else if(randomDrop == 2){
+					Instantiate (shotgunPreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
+				}
+				else {
+					Instantiate (riflePreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
+				}
+
 			 }
 			endedFloorMakers++; 
 			Destroy(gameObject); 

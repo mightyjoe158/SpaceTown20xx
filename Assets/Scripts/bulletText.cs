@@ -12,6 +12,6 @@ public class bulletText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		mesh.text = "X " + avatar.GetComponent<weaponScript>().specialAmmo;
+		mesh.text = "X " + weaponScript.specialAmmo;
 	}
 }
