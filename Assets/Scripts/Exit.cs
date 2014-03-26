@@ -18,7 +18,7 @@ public class Exit : MonoBehaviour {
 			print ("level" + FloorMaker.level);
 			FloorMaker.maxFloorMakers++; 
 			EnemyAI.moveSpeed += .3f;
-			EnemyAI.randomShoot -= 4; 
+			EnemyAI.randomShoot -= 7; 
 			weaponScript.dynamiteAmmo +=2; 
 			Application.LoadLevel(Application.loadedLevel);
 		} 

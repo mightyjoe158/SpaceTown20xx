@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour {
 	int enemyMovementCounter = 0;  
 	int enemyMovementCounterMax = 20; 
 	int randomNumber; 
-	public static int randomShoot = 30; 
+	public static int randomShoot = 60; 
 	//bool isChasing = false; //this bool will say if the ai is chasing or not. Once it sees the player the bool turns to true  					//and the enemy wont stop chasing the player. 
 							
 	void Awake(){
