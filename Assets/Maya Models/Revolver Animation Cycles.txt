@@ -1,0 +1,39 @@
+
+For Cylinder:
+
+1st Shot
+Frame: 1-29
+
+2nd Shot
+Frame: 30-59
+
+3rd Shot
+Frame: 60-89
+
+4rd Shot
+Frame: 90-119
+
+5rd Shot
+Frame: 120-149
+
+6rd Shot
+Frame: 150-169
+
+Reload Animation
+Frame 170-210
+
+
+
+
+For Revolver:
+
+Prime
+Frame: 1-5
+
+Fire
+Frame: 10-20
+
+Reload
+Frame: 20-28
+
+

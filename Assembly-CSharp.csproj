@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\healthDisplayScript.cs" />
      <Compile Include="Assets\Scripts\hudWeapon.cs" />
      <Compile Include="Assets\Scripts\itemScript.cs" />
+     <Compile Include="Assets\Scripts\loseScreen.cs" />
      <Compile Include="Assets\Scripts\mouseLook.cs" />
      <Compile Include="Assets\Scripts\pelletScript.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\specialGunLight.cs" />
      <Compile Include="Assets\Scripts\weaponScript.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Maya Models\Revolver Animation Cycles.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
