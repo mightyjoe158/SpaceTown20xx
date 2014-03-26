@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: bb598fb668f058e4ea71aa1e47a175bd
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Cylinder
+    100002: Everything
+    100004: group10
+    100006: group11
+    100008: group12
+    100010: group6
+    100012: group7
+    100014: group8
+    100016: group9
+    100018: pasted__group4
+    100020: pasted__group4 1
+    100022: pasted__group4 2
+    100024: pasted__pasted__group
+    100026: pasted__pasted__group 1
+    100028: pasted__pasted__group 2
+    100030: pasted__pasted__pasted__pCylinder1
+    100032: pasted__pasted__pasted__pCylinder2
+    100034: place3dTexture1
+    100036: polySurface12
+    100038: polySurface13
+    100040: polySurface14
+    100042: polySurface15
+    100044: polySurface16
+    100046: polySurface17
+    100048: polySurface18
+    100050: revolvedSurface1
+    100052: //RootNode
+    100054: RevolverShell1
+    100056: RevolverShell2
+    100058: RevolverShell3
+    100060: RevolverShell4
+    100062: RevolverShell5
+    100064: RevolverShell6
+    100066: RevolverShell7
+    100068: RevolverShell8
+    100070: transform1
+    100072: transform2
+    100074: transform3
+    100076: transform4
+    100078: transform5
+    400000: Cylinder
+    400002: Everything
+    400004: group10
+    400006: group11
+    400008: group12
+    400010: group6
+    400012: group7
+    400014: group8
+    400016: group9
+    400018: pasted__group4
+    400020: pasted__group4 1
+    400022: pasted__group4 2
+    400024: pasted__pasted__group
+    400026: pasted__pasted__group 1
+    400028: pasted__pasted__group 2
+    400030: pasted__pasted__pasted__pCylinder1
+    400032: pasted__pasted__pasted__pCylinder2
+    400034: place3dTexture1
+    400036: polySurface12
+    400038: polySurface13
+    400040: polySurface14
+    400042: polySurface15
+    400044: polySurface16
+    400046: polySurface17
+    400048: polySurface18
+    400050: revolvedSurface1
+    400052: //RootNode
+    400054: RevolverShell1
+    400056: RevolverShell2
+    400058: RevolverShell3
+    400060: RevolverShell4
+    400062: RevolverShell5
+    400064: RevolverShell6
+    400066: RevolverShell7
+    400068: RevolverShell8
+    400070: transform1
+    400072: transform2
+    400074: transform3
+    400076: transform4
+    400078: transform5
+    2300000: Cylinder
+    2300002: polySurface13
+    2300004: polySurface14
+    2300006: polySurface15
+    2300008: polySurface16
+    2300010: polySurface17
+    2300012: polySurface18
+    2300014: RevolverShell1
+    2300016: RevolverShell2
+    2300018: RevolverShell3
+    2300020: RevolverShell4
+    2300022: RevolverShell5
+    2300024: RevolverShell6
+    2300026: RevolverShell8
+    3300000: Cylinder
+    3300002: polySurface13
+    3300004: polySurface14
+    3300006: polySurface15
+    3300008: polySurface16
+    3300010: polySurface17
+    3300012: polySurface18
+    3300014: RevolverShell1
+    3300016: RevolverShell2
+    3300018: RevolverShell3
+    3300020: RevolverShell4
+    3300022: RevolverShell5
+    3300024: RevolverShell6
+    3300026: RevolverShell8
+    4300000: RevolverShell6
+    4300002: RevolverShell5
+    4300004: RevolverShell4
+    4300006: RevolverShell2
+    4300008: RevolverShell3
+    4300010: Cylinder
+    4300012: RevolverShell8
+    4300014: RevolverShell1
+    4300016: polySurface16
+    4300018: polySurface15
+    4300020: polySurface18
+    4300022: polySurface14
+    4300024: polySurface13
+    4300026: polySurface17
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
