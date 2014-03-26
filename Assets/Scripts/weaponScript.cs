@@ -30,6 +30,7 @@ public class weaponScript : MonoBehaviour {
 	
 	//weapon noises
 	public AudioClip revolverFire;
+	public AudioClip revolverCock;
 	public AudioClip revolverClick;
 	public AudioClip revolverReload;
 	
