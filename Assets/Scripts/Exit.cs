@@ -12,8 +12,14 @@ public class Exit : MonoBehaviour {
 			FloorMaker.startWall = false; 
 			FloorMaker.endedFloorMakers = 0;
 			FloorMaker.map = mapNull;  
+			FloorMaker.enemyProbability -= 7; 
+			FloorMaker.maxEnemy += 10; 
+			FloorMaker.level++; 
+			print ("level" + FloorMaker.level);
+			FloorMaker.maxFloorMakers++; 
+			EnemyAI.moveSpeed += .3f;
+			EnemyAI.randomShoot -= 4; 
 			Application.LoadLevel(Application.loadedLevel);
 		} 
-		}
-	
+	}	
 }

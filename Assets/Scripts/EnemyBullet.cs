@@ -9,6 +9,7 @@ public class EnemyBullet : MonoBehaviour {
 	
 	//should reference player object
 	public GameObject player;
+	public GameObject enemy; 
 	
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,8 @@ public class EnemyBullet : MonoBehaviour {
 		body.constraints = RigidbodyConstraints.FreezeRotationY;
 		body.AddForce(transform.right * Random.Range(-deviation,deviation));
 		body.AddForce(transform.up * initialForce);
+		
+//		Physics.IgnoreCollision(collider, enemy.collider);
 	}
 	
 	//first if should be set to include all enemy object types
@@ -32,14 +35,15 @@ public class EnemyBullet : MonoBehaviour {
 		if(collision.relativeVelocity.magnitude > .1f) {
 			switch(collision.gameObject.tag) {
 				
-				//player damaga
-			case("player"):
-				Destroy(collision.gameObject, 1);
+				//player damage
+			case("bullet"): 
+				Physics.IgnoreCollision(collision.gameObject.collider, this.gameObject.collider);
+				break; 
+			case("Player"):
+				weaponScript.hp -= 10; 
 				break;
-				
 				//enemy destroy
-			case("enemy"):
-				//Destroy(collision.gameObject, 1);
+			case("Enemy"):
 				break;
 			default:
 				//fall after hitting an object

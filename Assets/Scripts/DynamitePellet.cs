@@ -41,13 +41,15 @@ public class DynamitePellet : MonoBehaviour {
 			switch(collision.gameObject.tag) {
 				
 				//player damaga
+			case("bullet"): 
+				Physics.IgnoreCollision(collision.gameObject.collider, this.gameObject.collider);
+				break; 
 			case("avatar"):
-				//player.GetComponent<weaponScript>().hp -= (int) collision.relativeVelocity.magnitude;
 				break;
 				
 				//enemy destroy
 			case("enemy"):
-				Destroy(collision.gameObject, .3f);
+				Destroy(collision.gameObject, .2f);
 				break;
 			default:
 				//fall after hitting an object

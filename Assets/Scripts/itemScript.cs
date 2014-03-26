@@ -8,24 +8,24 @@ public class itemScript : MonoBehaviour {
 	
 	void OnTriggerStay(Collider other) {
 		if(this.gameObject.name == "health" && other.gameObject.name == "avatar") {
-			other.GetComponent<weaponScript>().hp += 10;
+		weaponScript.hp += 10;
 			Destroy(this.gameObject);
 		}
 		
 		if(Input.GetKeyDown(KeyCode.G)) {
 			if(this.gameObject.name == "rifle" && other.gameObject.name == "avatar") {
 				avatar.GetComponent<weaponScript>().specialWeapon = weaponScript.specialMode.RIFLE;
-				avatar.GetComponent<weaponScript>().specialAmmo = 30;
+				weaponScript.specialAmmo = 30;
 				Destroy(this.gameObject);
 				
 			} else if (this.gameObject.name == "shotgun" && other.gameObject.name == "avatar") {
 				avatar.GetComponent<weaponScript>().specialWeapon = weaponScript.specialMode.SHOTGUN;
-				avatar.GetComponent<weaponScript>().specialAmmo = 15;
+				weaponScript.specialAmmo = 15;
 				Destroy(this.gameObject);
 				
 			} else if (this.gameObject.name == "melee" && other.gameObject.name == "avatar"){
 				avatar.GetComponent<weaponScript>().specialWeapon =	weaponScript.specialMode.MELEE;
-				avatar.GetComponent<weaponScript>().specialAmmo = 100;
+				weaponScript.specialAmmo = 100;
 				Destroy(this.gameObject);
 			}
 		}

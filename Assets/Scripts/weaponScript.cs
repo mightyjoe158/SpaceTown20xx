@@ -3,10 +3,10 @@ using System.Collections;
 
 public class weaponScript : MonoBehaviour {
 	//health and ammo types
-	public int hp;
+	public static int hp;
 	public int revolverAmmo;
-	public int specialAmmo;
-	public int dynamiteAmmo; 
+	public static int specialAmmo;
+	public static int dynamiteAmmo; 
 	
 	//weapon counter is used for reloading and priming
 	public float weaponCounter;
@@ -33,10 +33,12 @@ public class weaponScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		hp = 100;
-		revolverAmmo = 6;
-		specialAmmo = 100;
-		dynamiteAmmo = 100; 
+		if(FloorMaker.level == 1) {
+			hp = 100;
+			dynamiteAmmo = 2;
+			specialAmmo = 10;
+		}
+		revolverAmmo = 6; 
 		revolverMode = true;
 		gunPrime = true;
 		weaponCounter = 0f;
@@ -47,6 +49,19 @@ public class weaponScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if( hp <= 0 ){
+			int[,] mapNull = new int[1000, 1000];
+			Destroy(gameObject); 
+			FloorMaker.currentFloorMakers = 0; 
+			FloorMaker.entrancePlaced = false; 
+			FloorMaker.startWall = false; 
+			FloorMaker.endedFloorMakers = 0;
+			FloorMaker.map = mapNull;  
+			FloorMaker.level = 1; 
+			FloorMaker.maxEnemy = 20; 
+			FloorMaker.enemyProbability = 50; 
+			Application.LoadLevel(Application.loadedLevel);
+		}
 		initialCamera = transform.position;
 		initialCamera.y +=12f;
 		finalCamera = initialCamera;
@@ -56,7 +71,7 @@ public class weaponScript : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)) {
 			
 			if(revolverMode && revolverAmmo > 0 && gunPrime == true) {
-				bullet.GetComponent<bulletScript>().deviation = 100;
+				bullet.GetComponent<bulletScript>().deviation = 0;
 				GameObject clone = (GameObject) Instantiate(bullet, transform.position, transform.rotation);
 				Physics.IgnoreCollision(clone.collider, transform.collider);
 				
@@ -80,10 +95,10 @@ public class weaponScript : MonoBehaviour {
 					
 					//10 pellets, with large spread, and short distance
 					case(specialMode.SHOTGUN):
-						for(int i = 0; i < 10; i++) {			
+						for(int i = 0; i < 20; i++) {			
 							GameObject clonePellet = (GameObject) Instantiate(pellet, transform.position, transform.rotation);
 							Physics.IgnoreCollision(clonePellet.collider, transform.collider);	
-						}
+						} 
 						
 						//reset priming and ammo decrease
 						weaponCounter = 0;

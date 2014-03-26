@@ -14,6 +14,7 @@ public class bulletScript : MonoBehaviour {
 	void Start () {
 		//bullets set to disappear after thirty seconds, rotate for prefab weirdness
 		initialForce = 1000;
+		deviation = 0; 
 		Destroy(this.gameObject, 2);
 		transform.Rotate(90,0, 0);
 
@@ -33,13 +34,13 @@ public class bulletScript : MonoBehaviour {
 			switch(collision.gameObject.tag) {
 			
 			//player damaga
-			case("avatar"):
-				player.GetComponent<weaponScript>().hp -= (int) collision.relativeVelocity.magnitude;
-				break;
-				
+			case("bullet"): 
+				break; 
+			case("player"): 
+				break; 			
 			//enemy destroy
 			case("enemy"):
-				Destroy(collision.gameObject, 1);
+				Destroy(collision.gameObject, .2f);
 				break;
 			default:
 				//fall after hitting an object

@@ -7,15 +7,15 @@ public class EnemyAI : MonoBehaviour {
 	private Transform myTransform;
 	public GameObject revolverBullet;
 	
-	int moveSpeed = 5;
+	public static float moveSpeed = 5f;
 	int rotationSpeed = 5;
 	float maxdistance = 100f;
 	float minDistance = Random.Range(10f,80f);
 	int enemyMovementCounter = 0;  
 	int enemyMovementCounterMax = 20; 
 	int randomNumber; 
-	bool isChasing = false; //this bool will say if the ai is chasing or not. Once it sees the player the bool turns to true  
-	Vector3 filler = new Vector3(0f,0f,1f); 						//and the enemy wont stop chasing the player. 
+	public static int randomShoot = 30; 
+	//bool isChasing = false; //this bool will say if the ai is chasing or not. Once it sees the player the bool turns to true  					//and the enemy wont stop chasing the player. 
 							
 	void Awake(){
 		myTransform = transform;
@@ -39,8 +39,9 @@ public class EnemyAI : MonoBehaviour {
 			myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
 			myTransform.rotation = Quaternion.Slerp(myTransform.rotation, 
 				Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-			if(Random.Range (0,50) == 0) {
-				Instantiate(revolverBullet, myTransform.position + filler, myTransform.rotation); 
+			if(Random.Range (0,randomShoot) == 0) {
+				GameObject enemyBullet = (GameObject)Instantiate(revolverBullet, myTransform.position, myTransform.rotation); 
+				Physics.IgnoreCollision(enemyBullet.collider, myTransform.collider);
 				}				
 		}
 		if(GetSqrDistXZ(target.position, myTransform.position) <= minDistance) {
@@ -62,7 +63,8 @@ public class EnemyAI : MonoBehaviour {
 				}			  
 			}
 			if(Random.Range (0,50) == 0) {
-				Instantiate(revolverBullet, myTransform.position + filler, myTransform.rotation); 
+				GameObject enemyBullet = (GameObject)Instantiate(revolverBullet, myTransform.position, myTransform.rotation); 
+				Physics.IgnoreCollision(enemyBullet.collider, myTransform.collider);
 			}
 			enemyMovementCounter++; 
 		}

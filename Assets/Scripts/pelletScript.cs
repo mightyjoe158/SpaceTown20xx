@@ -7,6 +7,7 @@ public class pelletScript : MonoBehaviour {
 	float deviation;
 	float start;
 	
+	
 	//should reference player object
 	public GameObject player;
 	
@@ -39,15 +40,16 @@ public class pelletScript : MonoBehaviour {
 		
 		if(collision.relativeVelocity.magnitude > .1f) {
 			switch(collision.gameObject.tag) {
-				
+			
+			case("bullet"): 
+				break; 
 				//player damaga
 			case("avatar"):
-				player.GetComponent<weaponScript>().hp -= (int) collision.relativeVelocity.magnitude;
 				break;
 				
 				//enemy destroy
 			case("enemy"):
-				Destroy(collision.gameObject, 1);
+				Destroy(collision.gameObject, .2f);
 				break;
 			default:
 				//fall after hitting an object
