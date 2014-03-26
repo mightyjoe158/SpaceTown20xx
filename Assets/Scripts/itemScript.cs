@@ -15,17 +15,14 @@ public class itemScript : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.G)) {
 			if(this.gameObject.name == "rifle" && other.gameObject.name == "avatar") {
 				avatar.GetComponent<weaponScript>().specialWeapon = weaponScript.specialMode.RIFLE;
-				weaponScript.specialAmmo = 30;
 				Destroy(this.gameObject);
 				
 			} else if (this.gameObject.name == "shotgun" && other.gameObject.name == "avatar") {
 				avatar.GetComponent<weaponScript>().specialWeapon = weaponScript.specialMode.SHOTGUN;
-				weaponScript.specialAmmo = 15;
 				Destroy(this.gameObject);
 				
 			} else if (this.gameObject.name == "melee" && other.gameObject.name == "avatar"){
 				avatar.GetComponent<weaponScript>().specialWeapon =	weaponScript.specialMode.MELEE;
-				weaponScript.specialAmmo = 100;
 				Destroy(this.gameObject);
 			}
 		}

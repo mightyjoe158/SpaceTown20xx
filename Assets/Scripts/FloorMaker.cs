@@ -6,13 +6,16 @@ public class FloorMaker : MonoBehaviour {
 	//prefabs
 	public Transform floorPrefab;
 	public Transform floorMakerPrefab;
-	public Transform chestPreFab;  
+	public Transform ammoPreFab;
+	public Transform healthPreFab;
 	public Transform wallPreFab; 
 	public Transform enemyPrefab;
 	public Transform entrancePreFab; 
 	public Transform exitPreFab;
 	public Transform playerPreFab; 
 	public Transform invisibleWallPreFab;
+	public Transform shoutgunPreFab; 
+	public Transform rifleWallPreFab;
 	
 	//maxs and mins 
 	int currentFloor = 0; 
@@ -126,7 +129,13 @@ public class FloorMaker : MonoBehaviour {
 		
 		if(currentFloor == floorMax && endedFloorMakers < maxFloorMakers) {
 			if(endedFloorMakers > maxFloorMakers - 3) {
-			 	Instantiate (chestPreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
+				int randomDrop = Random.Range(0,2);
+				if(randomDrop == 0) {
+			 		Instantiate (healthPreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
+			 	}
+			 	else{
+					Instantiate (ammoPreFab, new Vector3(floorPositionX, .5f, floorPositionZ), Quaternion.identity);
+			 	}
 			 }
 			endedFloorMakers++; 
 			Destroy(gameObject); 

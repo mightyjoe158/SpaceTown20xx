@@ -35,9 +35,9 @@ public class weaponScript : MonoBehaviour {
 	void Start () {
 		if(FloorMaker.level == 1) {
 			hp = 100;
-			dynamiteAmmo = 2;
 			specialAmmo = 10;
 		}
+		dynamiteAmmo = 2;
 		revolverAmmo = 6; 
 		revolverMode = true;
 		gunPrime = true;
