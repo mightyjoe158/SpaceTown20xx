@@ -1,0 +1,10 @@
+the following sounds were used from freesound.org in a slightly editted form:
+218319__mentalsanityoff__winchester-1873-cock-and-dry-fire.wav
+148841__cedarstudios__shotgun-targetside.mp3
+153560__mentalsanityoff__winchester-rifle-cock-reload.wav
+104663__donalfonso__revolver-clicks.wav
+177863__dredile__clean-revolver-reload.wav
+139979__dcsimon__44-magnum.wav
+222131__shaana__pump-shotgun.wav
+50618__fastson__remingtongunshot.wav
+51057__fastson__remcock.wav

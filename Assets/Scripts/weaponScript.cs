@@ -28,6 +28,21 @@ public class weaponScript : MonoBehaviour {
 	public GameObject pellet;
 	public GameObject dynamite;
 	
+	//weapon noises
+	public AudioClip revolverFire;
+	public AudioClip revolverCock;
+	public AudioClip revolverReload;
+	
+	public AudioClip rifleFire;
+	public AudioClip rifleCock;
+	public AudioClip rifleReload;
+	
+	public AudioClip shotgunFire;
+	public AudioClip shotgunPump1;
+	public AudioClip shotgunPump2;
+	
+	public AudioClip weaponClick;
+	
 	//types of second weapon
 	public enum specialMode {SHOTGUN, RIFLE, MELEE, NONE}
 	
@@ -59,6 +74,7 @@ public class weaponScript : MonoBehaviour {
 				bullet.GetComponent<bulletScript>().deviation = 100;
 				GameObject clone = (GameObject) Instantiate(bullet, transform.position, transform.rotation);
 				Physics.IgnoreCollision(clone.collider, transform.collider);
+				AudioSource.PlayClipAtPoint(revolverFire, Camera.main.transform.position);
 				
 				revolverAmmo--;
 				gunPrime = false;
@@ -71,6 +87,7 @@ public class weaponScript : MonoBehaviour {
 						bullet.GetComponent<bulletScript>().deviation = 200 - weaponCounter;
 						GameObject clone = (GameObject) Instantiate (bullet, transform.position, transform.rotation);
 						Physics.IgnoreCollision(clone.collider, transform.collider);
+						AudioSource.PlayClipAtPoint(rifleFire, Camera.main.transform.position);
 						
 						//reset priming and ammo decrease
 						gunPrime = false;
@@ -80,6 +97,8 @@ public class weaponScript : MonoBehaviour {
 					
 					//10 pellets, with large spread, and short distance
 					case(specialMode.SHOTGUN):
+						AudioSource.PlayClipAtPoint(shotgunFire, Camera.main.transform.position);
+						
 						for(int i = 0; i < 10; i++) {			
 							GameObject clonePellet = (GameObject) Instantiate(pellet, transform.position, transform.rotation);
 							Physics.IgnoreCollision(clonePellet.collider, transform.collider);	
@@ -92,6 +111,8 @@ public class weaponScript : MonoBehaviour {
 						break;
 				}
 
+			} else {
+				AudioSource.PlayClipAtPoint(weaponClick, Camera.main.transform.position);
 			}
 			
 		}
@@ -99,12 +120,10 @@ public class weaponScript : MonoBehaviour {
 		//'r' to reload type of weapon, one bullet at a time
 		if (Input.GetKeyDown(KeyCode.R)) {
 			if(revolverMode && revolverAmmo < 6) {
+				AudioSource.PlayClipAtPoint(revolverReload, Camera.main.transform.position);
 				revolverAmmo++;
 				gunPrime = false;
-			} else if(!revolverMode){
-				specialAmmo++;
-				gunPrime = false;
-			}
+			} 
 		}
 		if (Input.GetKeyDown(KeyCode.F)) {
 			if(dynamiteAmmo > 0) {			
@@ -130,12 +149,15 @@ public class weaponScript : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Space)) {
 			if(specialWeapon == specialMode.SHOTGUN) {
 				if(weaponCounter == 1) {
+					AudioSource.PlayClipAtPoint(shotgunPump2, Camera.main.transform.position);
 					gunPrime = true;
 				} else {
+					AudioSource.PlayClipAtPoint(shotgunPump1, Camera.main.transform.position);
 					weaponCounter++;
 				}
 			} else if(specialWeapon == specialMode.RIFLE) {
 				gunPrime = true;
+				AudioSource.PlayClipAtPoint(rifleReload, Camera.main.transform.position);
 			}
 		}
 		
@@ -151,21 +173,13 @@ public class weaponScript : MonoBehaviour {
 			if (weaponCounter >= 100) {
 				gunPrime = true;
 			}
+			
+			if (weaponCounter > 95 && weaponCounter < 97) {
+				AudioSource.PlayClipAtPoint(rifleCock, Camera.main.transform.position);
+			}
 		} else {
 			camera.transform.position = Vector3.MoveTowards(camera.transform.position, initialCamera, 3.5f * Time.deltaTime);
 		}
-	}
-	
-	void FixedUpdate() {
-		
-		//as long is left button is down chaingun will fire
-/*		if(Input.GetMouseButton(0) && specialWeapon == specialMode.CHAINGUN && specialAmmo > 0) {
-			bullet.GetComponent<bulletScript>().deviation = 400;
-			GameObject cloneChain = (GameObject) Instantiate (bullet, transform.position, transform.rotation);
-			Physics.IgnoreCollision(cloneChain.collider, transform.collider);
-			
-			specialAmmo--;
-		}*/
 	}
 	
 }
