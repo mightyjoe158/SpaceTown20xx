@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\loseScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\weaponScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\loseScreen.cs" Line="9" Column="39" />
-      <File FileName="Assets\Scripts\weaponScript.cs" Line="155" Column="46" />
-      <File FileName="Assets\Scripts\deathScript.cs" Line="11" Column="3" />
+      <File FileName="Assets\Scripts\loseScreen.cs" Line="13" Column="1" />
+      <File FileName="Assets\Scripts\weaponScript.cs" Line="209" Column="1" />
+      <File FileName="Assets\Scripts\deathScript.cs" Line="16" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
